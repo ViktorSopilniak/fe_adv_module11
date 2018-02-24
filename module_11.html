@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style_11.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="search-form">
+            <input type="text" name="updateID" placeholder="Enter user ID">
+            <input type="text" name="updateName" placeholder="Enter user name">
+            <input type="text" name="updateScore" placeholder="Enter user score">
+            <button class="mdc-btn" type="submit" id="js-update">UPDATE USER</button>
+        </form>
+        <form class="search-form">
+            <input type="text" name="addName" placeholder="Enter user name">
+            <input type="text" name="addScore" placeholder="Enter user score">
+            <button class="mdc-btn" type="submit" id="js-add">ADD USER</button>
+        </form>
+        <form class="search-form">
+            <input type="text" name="userID" placeholder="Enter user ID">
+            <button class="mdc-btn" type="submit" id="js-remove">REMOVE USER</button>
+        </form>
+        <form class="search-form">
+            <button class="mdc-btn" type="submit" id="js-get">GET USERS</button>
+        </form>
+
+
+        <table class="centered" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="js-result"></tbody>
+        </table>
+
+    </div>
+    <!-- Шаблон одной строки для tbody -->
+    <script type="text/template" id="table-row">
+        <tr scope="row">
+            <td class="id">
+                <%- id%>
+            </td>
+            <td class="name">
+                <%- name%>
+            </td>
+            <td class="score">
+                <%- score%>
+            </td>
+        </tr>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="module_11.js"></script>
+</body>
+
+</html>
